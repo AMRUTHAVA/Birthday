@@ -1,25 +1,16 @@
-function login(){
+function login() {
 
-let name=document.getElementById("username").value.trim();
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-let pass=document.getElementById("password").value.trim();
+    if (username === "PAPA" && password === "0506") {
 
-if(name==="Jeolchin" && pass==="0506"){
+        alert("Welcome ❤️");
+        window.location.href = "../index.html";
 
-document.body.classList.add("success");
+    } else {
 
-setTimeout(()=>{
+        alert("Wrong Name or Password 💔");
 
-window.location.href = "../index.html";
-
-},2500);
-
-}
-else{
-
-document.getElementById("error").innerHTML=
-"💖 Hmm... Only my favorite person knows this secret.";
-
-}
-
+    }
 }
