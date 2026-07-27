@@ -1,0 +1,155 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+    overflow-x:hidden;
+    color:white;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.main-title{
+    font-size:4rem;
+    font-family:'Dancing Script',cursive;
+    margin-bottom:20px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px #ff4da6;
+    }
+
+    to{
+        text-shadow:
+        0 0 20px #ff4da6,
+        0 0 40px #ff4da6;
+    }
+}
+
+.typing-text{
+    font-size:1.3rem;
+    max-width:700px;
+    margin-bottom:30px;
+    min-height:60px;
+}
+
+.enter-btn{
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    background:#ff4da6;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.enter-btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px #ff4da6;
+}
+
+/* SURPRISE SECTION */
+
+.surprise-section{
+    min-height:100vh;
+    padding:100px 20px;
+    display:none;
+}
+
+.surprise-section h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:3rem;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.card{
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:50px 20px;
+    text-align:center;
+    font-size:2rem;
+    transition:0.4s;
+    cursor:pointer;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+.card span{
+    display:block;
+    margin-top:15px;
+    font-size:1.1rem;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 0 25px rgba(255,255,255,0.3);
+}
+
+/* Floating Hearts */
+
+.hearts::before,
+.hearts::after{
+    content:'❤️';
+    position:fixed;
+    font-size:2rem;
+    animation: float 10s linear infinite;
+    opacity:0.6;
+}
+
+.hearts::before{
+    left:10%;
+}
+
+.hearts::after{
+    right:10%;
+    animation-delay:5s;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+
+    to{
+        transform:translateY(-100vh);
+    }
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .main-title{
+        font-size:2.5rem;
+    }
+
+    .typing-text{
+        font-size:1rem;
+    }
+
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Letter For You ❤️</title>
+
+    <link rel="stylesheet" href="letter.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Stars -->
+    <div class="stars"></div>
+
+    <!-- Floating Hearts -->
+    <div class="floating-hearts"></div>
+
+    <!-- Music -->
+    <audio id="bgMusic" loop>
+        <source src="../Music/bg.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+
+        <!-- Envelope -->
+ <div class="envelope" id="envelope" onclick="openLetter()">
+
+    <div class="top-flap"></div>
+
+    <div class="message">
+        Click To Open 💌
+    </div>
+
+    <div class="seal">❤</div>
+
+</div>
+
+<div class="floating-hearts"></div>
+
+        <!-- Letter -->
+        <div class="letter-box" id="letterBox">
+
+            <h1>To My Favorite Person ❤️</h1>
+
+            <p id="letterText"></p>
+
+            <button onclick="showSecret()">
+                💖 Secret Message
+            </button>
+
+            <div id="secret"></div>
+
+            <button onclick="goBack()">
+                🏠 Back Home
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="letter.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(135deg,#141e30,#243b55,#2c5364);
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+}
+
+/* Hearts */
+
+.hearts::before{
+
+    content:"💖 💕 💖 💕 💖";
+
+    position:fixed;
+
+    width:100%;
+
+    top:-100px;
+
+    left:0;
+
+    font-size:2rem;
+
+    opacity:0.5;
+
+    animation:fall 10s linear infinite;
+}
+
+@keyframes fall{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(120vh);
+    }
+
+}
+
+/* Container */
+
+.memory-container{
+
+    text-align:center;
+
+    width:90%;
+
+    max-width:800px;
+}
+
+/* Title */
+
+.memory-container h1{
+
+    font-size:4rem;
+
+    margin-bottom:30px;
+
+    color:#ff4da6;
+
+    font-family:'Dancing Script',cursive;
+
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+    from{
+        text-shadow:0 0 10px #ff4da6;
+    }
+
+    to{
+        text-shadow:
+        0 0 20px #ff4da6,
+        0 0 40px #ff4da6;
+    }
+
+}
+
+/* Slideshow */
+
+.slideshow{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:700px;
+
+    height:500px;
+
+    margin:auto;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:#111;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,0.2);
+}
+/* Images */
+
+.slide{
+
+    position:absolute;
+
+    max-width:100%;
+
+    max-height:100%;
+
+    width:auto;
+
+    height:auto;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    opacity:0;
+
+    transition:1.5s;
+}
+.slide.active{
+
+    opacity:1;
+
+    animation:slowZoom 6s linear;
+}
+
+@keyframes slowZoom{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.05);
+    }
+}
+
+/* Caption */
+
+#caption{
+
+    margin-top:30px;
+
+    font-size:1.3rem;
+
+    line-height:2;
+
+    animation:fadeText 2s infinite alternate;
+}
+
+@keyframes fadeText{
+
+    from{
+        opacity:0.6;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+/* Button */
+
+button{
+
+    margin-top:40px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#ff4da6;
+
+    color:white;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    transition:0.4s;
+}
+
+button:hover{
+
+    transform:scale(1.1);
+
+    box-shadow:
+    0 0 20px rgba(255,77,166,0.7);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .memory-container h1{
+
+        font-size:2.5rem;
+    }
+
+    .slideshow{
+
+        height:300px;
+    }
+
+}
