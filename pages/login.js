@@ -10,7 +10,7 @@ document.body.classList.add("success");
 
 setTimeout(()=>{
 
-window.location="index.html";
+window.location.href = "../index.html";
 
 },2500);
 
