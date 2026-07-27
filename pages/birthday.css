@@ -1,0 +1,391 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:Poppins;
+
+background:linear-gradient(#162447,#0b1028);
+
+overflow:hidden;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+}
+
+.stars{
+
+position:fixed;
+
+inset:0;
+
+background-image:radial-gradient(white 1px,transparent 1px);
+
+background-size:70px 70px;
+
+opacity:.4;
+
+}
+
+#intro{
+
+text-align:center;
+
+animation:fade 1s;
+
+}
+
+#intro h1{
+
+font-size:70px;
+
+font-family:"Dancing Script";
+
+color:#ff7bbd;
+
+}
+
+#intro p{
+
+margin-top:20px;
+
+font-size:24px;
+
+}
+
+#countdown{
+
+margin-top:50px;
+
+font-size:110px;
+
+font-weight:bold;
+
+color:white;
+
+animation:pulse 1s infinite;
+
+}
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.2);
+
+}
+
+}
+
+#giftSection{
+
+display:none;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.gift{
+
+position:relative;
+
+width:220px;
+
+height:220px;
+
+cursor:pointer;
+
+animation:float 2s infinite;
+
+}
+
+.box{
+
+position:absolute;
+
+bottom:0;
+
+width:220px;
+
+height:160px;
+
+background:#ff4da6;
+
+border-radius:12px;
+
+}
+
+.lid{
+
+position:absolute;
+
+top:20px;
+
+width:220px;
+
+height:50px;
+
+background:#ff86c2;
+
+border-radius:10px;
+
+transition:.8s;
+
+}
+
+.ribbon{
+
+position:absolute;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:24px;
+
+height:220px;
+
+background:white;
+
+}
+
+.gift.open .lid{
+
+transform:rotate(-25deg) translateY(-60px);
+
+}
+
+.giftText{
+
+margin-top:35px;
+
+font-size:26px;
+
+}
+
+#birthdayContent{
+
+display:none;
+
+text-align:center;
+
+width:900px;
+
+}
+
+#birthdayContent.show{
+
+display:block;
+
+animation:fade 1.5s;
+
+}
+
+.title{
+
+font-size:80px;
+
+font-family:"Dancing Script";
+
+color:#ff6fb3;
+
+text-shadow:0 0 25px hotpink;
+
+}
+
+.wish{
+
+margin:40px auto;
+
+font-size:26px;
+
+line-height:2;
+
+width:80%;
+
+}
+
+.cake{
+
+margin:auto;
+
+margin-top:40px;
+
+width:220px;
+
+height:120px;
+
+background:#ff7ab8;
+
+border-radius:12px;
+
+position:relative;
+
+}
+
+.candle{
+
+position:absolute;
+
+width:12px;
+
+height:70px;
+
+background:white;
+
+left:104px;
+
+top:-70px;
+
+}
+
+.flame{
+
+position:absolute;
+
+width:20px;
+
+height:30px;
+
+background:gold;
+
+border-radius:50%;
+
+left:100px;
+
+top:-92px;
+
+animation:flicker .3s infinite alternate;
+
+}
+
+@keyframes flicker{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(.8);
+
+}
+
+}
+
+button{
+
+margin-top:60px;
+
+padding:16px 45px;
+
+font-size:20px;
+
+border:none;
+
+border-radius:40px;
+
+background:#ff4da6;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+.confetti{
+
+position:fixed;
+
+top:-20px;
+
+width:12px;
+
+height:20px;
+
+animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+to{
+
+transform:translateY(110vh) rotate(720deg);
+
+}
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}.fireworks{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:9999;
+}
+
+.firework{
+    position:absolute;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    animation:explode 1.5s forwards;
+}
+
+@keyframes explode{
+
+    from{
+        transform:translate(0,0) scale(1);
+        opacity:1;
+    }
+
+    to{
+        transform:translate(var(--x),var(--y)) scale(0);
+        opacity:0;
+    }
+
+}
