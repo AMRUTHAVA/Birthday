@@ -17,11 +17,11 @@
   <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <script>
-  if (sessionStorage.getItem("loggedIn") !== "true") {
-      window.location.href = "pages/login.html";
-  }
-  </script>
+ <script>
+if (sessionStorage.getItem("loggedIn") !== "true") {
+    window.location.replace("pages/login.html");
+}
+</script>
 </head>
 
 <body>
